@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>title</legend>
+        <form action="php" method="post">
+            <table border="1px solid black" style="border-collapse: collapse; background-color: lightgoldenrodyellow;" >
+                <tr>
+                    <td><label for="un">username:</label></td>
+                    <td><input type="text" id="un" placeholder="type your name"></td>
+                </tr>
+                <tr>
+                    <td><label for="password">password:</label></td>
+                    <td><input required type="pasword" id="password"></td>
+                </tr>
+                <tr>
+                    <td><label for="email">e-mail:</label></td>
+                    <td><input required type="email" id="email" placeholder="xxxxx@xxx.xxx"></td>
+                </tr>
+                <tr>
+                    <td><label for="mo">mobile no:</label></td>
+                    <td><input required type="tel" id="mo" placeholder="+91 xxxxxxxxxx"></td>
+                </tr>
+                <tr>
+                    <td><label for="age">age:</label></td>
+                    <td><input type="number" id="age" min="10" max="50"></td>
+                </tr>
+                <tr>
+                    <td><label for="DOB">DOB:</label></td>
+                    <td><input required type="date" id="DOB"></td>
+                </tr>
+                <tr>
+                    <td><label for="d&t">date & time:</label></td>
+                    <td><input type="datetime-local" id="d&t"></td>
+                </tr>
+                <tr>
+                    <td><label for="gander">gander:</label></td>
+                    <td>
+                        <input type="radio" id="gander" name="gander"> male
+                        <input type="radio" id="gander" name="gander"> female
+                        <input type="radio" id="gander" name="gander"> other
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="hobbires">hobbies:</label></td>
+                    <td>
+                        <input type="checkbox" id="hobbies" checked> cricket
+                        <input type="checkbox" id="hobbies">swimming
+                        <input type="checkbox" id="hobbies">rading
+                        <input type="checkbox" id="hobbies">coding
+                        <input type="checkbox" id="hobbies">designing
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="hobbies1">hobbies</label></td>
+                    <td><textarea name="hobbies1" id="hobbies1" cols="30" rows="10"
+                            placeholder="type ypur hobbies"></textarea></td>
+                </tr>
+                <tr>
+                    <td><label for="city">city</label></td>
+                    <td>
+                        <select name="city" id="city">
+                            <option value="">none</option>
+                            <option value="">ahmedabad</option>
+                            <option value="">rajkot</option>
+                            <option value="">s.nagar</option>
+                            <option value="">anand</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="edu">education</label></td>
+                    <td>
+                        <select required name="edu" id="edu" multiple>education
+                            <option value="select yor education">none</option>
+                            <option value="">10th</option>
+                            <option value="">12th</option>
+                            <option value="">bsc</option>
+                            <option value="">er</option>
+                            <option value="">mbbs</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="color">color</label></td>
+                    <td><input type="color" id="color"></td>
+                </tr>
+                <tr>
+                    <td><input type="reset" value="reset"></td>
+                    <td><input type="submit" value="submit"></td>
+                </tr>
+            </table>
+        </form>
+    </fieldset>
+
+   
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+            box-sizing: border-box;
+
+        }
+        body{
+            height: 400vh;
+        }
+        .container{
+            width: 100%;
+            height: 150vh;
+            background-color:antiquewhite;
+            position: relative;
+            
+        }
+        .box{
+            height: 300px;
+            width: 300px;
+            border: 2px solid;
+            position: absolute;
+            cursor:progress;
+        }
+        .b1{
+            background-color:brown;
+            top: 100px;
+            left: 100px;
+            z-index: 1;
+            box-shadow: 5px 5px 3px rgb(16, 155, 180);
+        }
+        .b2{
+            background-color:rgb(165, 155, 42);
+            top: 200px;
+            left: 200px;
+        }
+        .b3{
+            background-color:rgb(42, 165, 118);
+            top: 300px;
+            left: 300px;
+            z-index: 3;
+        }
+        .b4{
+            background-color:rgb(42, 81, 165);
+            top: 400px;
+            left: 400px;
+        }
+        .b5{
+            background-color:rgb(165, 42, 120);
+            top: 500px;
+            left: 500px;
+        }
+        h1{
+            text-shadow: 3px 3px 2px gray;
+        }
+        .fix{
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            background-color:chocolate;
+        }
+        .sticky{
+            display: inline;
+            position: sticky;
+            top: 100px;
+            left: 100px;
+            background-color:chocolate;
+        }
+        
+        
+
+    </style>
+
+</head>
+<body>
+    <h1>you can see box shadow in box 1.</h1>
+    <div class="container">
+        <div class="box b1">1</div>
+        <div class="box b2">2</div>
+        <div class="box b3">3</div>
+        <div class="box b4">4</div>
+        <div class="box b5">5</div>
+        <div class="sticky">this is sticky.</div>
+    </div>
+    <div class="fix">this is fix.</div>
+</body>
+</html>

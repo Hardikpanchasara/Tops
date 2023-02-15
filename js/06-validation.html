@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .conteiner {
+            width: 500px;
+            margin: 0 auto;
+            background-color: lightskyblue;
+        }
+
+        input {
+            display: block;
+            margin: 10px auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="conteiner">
+        <h1>login form</h1>
+        <form onsubmit="return vaildFrom() ">
+            <input  type="text" placeholder="enterusername" id="usename">
+            <p id="usernameerror"></p>
+            <input type="password" id="password" placeholder="enterpassword">
+            <p id="passerror"></p>
+            <input type="submit" value="savedata">
+        </form>
+    </div>
+
+    <script>
+
+        let username = document.getElementById('usename')
+        let password = document.getElementById('password')
+        
+
+        function vaildFrom() {
+
+            if (username.value == '') {
+                document.getElementById('usernameerror').innerHTML = 'enter useername'
+             event.preventDefault()
+            }
+
+            else if (username.value.length < 4) {
+                document.getElementById('usernameerror').innerHTML = 'min 4 char'
+                event.preventDefault()
+            }
+            else {
+                document.getElementById('usernameerror').innerHTML = ''
+              
+            }
+            if(password.value == ""){
+                document.getElementById('passerror').innerHTML = 'enterpassword'
+                event.preventDefault()
+            }
+            else if(password.value.length < 8){
+                document.getElementById('passerror').innerHTML = 'MI 8 CHAR'
+                event.preventDefault()
+                
+            }
+            else{
+                document.getElementById('passerror').innerHTML = ''
+                
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

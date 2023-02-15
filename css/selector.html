@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selector</title>
+    <style>
+        /* this is universal silector */
+        *{
+            background-color: #777;
+            color: white;
+        }
+        /* this is element selector */
+        span{
+            background-color: green;
+
+        }
+        /* this is class selector */
+        .one{
+            background-color: #347889;
+        }
+        /* this is id selector */
+        #one{
+            background-color: red;
+        }
+        /* this is grouping selector */
+        .one ,#one ,span{
+            font-weight: 800;
+        }
+        /* this is descendant selector */
+        section p{
+            background-color: #561289;
+        }
+        /* this is child selector */
+        div > p{
+            background-color: #892356;
+        }
+        /* this is adjacent selector */
+        section + p{
+            background-color: black;
+        }
+        section ~ span{
+            background-color: orange;
+        }
+
+    </style>
+</head>
+<body>
+    <span>element selector</span>
+    <div class="one">class selector</div>
+    <div id="one">id selector</div>
+    <section>
+        <p>descendant selector</p>
+        <p>descendant selector</p>
+        <p>descendant selector</p>
+        <div>
+            <p>child selector</p>
+            <p>child selector</p>
+            <p>child selector</p>
+        </div>
+        <p>descendant selector</p>
+        <p>descendant selector</p>
+        <p>descendant selector</p>
+    </section>
+    <p>adjecant selector</p>
+    <span>general selector</span>
+    <span>general selector</span>
+    <span>general selector</span>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 99vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(90deg, #ff0051, #0099ff);
+        }
+
+        .wraper {
+            position: relative;
+            max-width: calc(100vw - 4rem);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .wraper button {
+            position: absolute;
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            border: none;
+            outline: none;  
+            cursor: pointer;
+            background-color: #f0f0f0;
+            color: #000;
+            box-shadow: 0 0 7px 7px #81818146;
+        }
+
+        .wraper button:hover {
+            filter: brightness(1.2);
+        }
+
+        .wraper button:active {
+            filter: brightness(0.8);
+        }
+
+        .wraper button.navigator1 {
+            left: 0;
+            translate: -50%;
+        }
+
+        .wraper button.navigator2 {
+            right: 0;
+            translate: 50%;
+        }
+
+        .wraper button i {
+            font-size: 2.3rem;
+        }
+
+        .container {
+            position: relative;
+            width: 580px;
+            max-width: 100%;
+            height: 430px;
+            border: 4px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 0 15px 8px rgba(0, 0, 0, 0.25);
+        }
+
+        .container .slider {
+            display: flex;
+            position: relative;
+            width: fit-content;
+            height: 100%;
+            background-color: #ddd;
+        }
+
+        .container .slider img {
+            width: 580px;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .wraper .dot {
+            display: flex;
+            position: relative;
+            margin-top: 1rem;
+        }
+
+        .wraper .dot span {
+            width: 14px;
+            height: 14px;
+            border: 2px solid crimson;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: border 0.3s ease-in-out;
+        }
+
+        .wraper .dot span.clicked {
+            border-width: 7px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wraper">
+        <div class="container">
+            <div class="slider"></div>
+        </div>
+        <div class="dot"></div>
+        <button class="navigator navigator1" id="0">
+            <i class="fa fa-angle-left"></i>
+        </button>
+        <button class="navigator navigator2" id="1">
+            <i class="fa fa-angle-right"></i>
+        </button>
+    </div>
+
+    <script>
+        let imgArray = [
+            "3N8QCMsR/img1.jpg",
+            "fWfw3CGy/img2.webp",
+            "rw3c6Prn/img3.webp",
+            "7LJHfk4r/img4.jpg",
+            "cLb1xJVc/img5.jpg",
+            "7h9DpP30/img6.webp",
+            "wvdpMRFD/img7.jpg"
+        ];
+        let counter = 1;
+        let interval = "";
+        let navigatorId = 1;
+        let container = document.querySelector(".container");
+        let slider = container.querySelector(".slider");
+        let navigator = document.querySelectorAll(".navigator");
+        for (n = 0; n < imgArray.length; n++) {
+            let img = document.createElement("img");
+            img.src = "https://i.postimg.cc/" + imgArray[n];
+            slider.appendChild(img);
+        }
+        let slides = slider.querySelectorAll("img");
+        let dotDiv = document.querySelector(".dot");
+        let containerWidth = container.clientWidth;
+        let slideWidth = slides[0].clientWidth;
+        let dots = "";
+        let firstClone = `<img src = "${slides[0].src}" id='firstClone'>`;
+        let lastClone = `<img src = "${slides[slides.length - 1].src}" id='lastClone'>`;
+        slider.innerHTML = lastClone + slider.innerHTML + firstClone;
+        slides = slider.querySelectorAll("img");
+        slides.forEach((slides1) => {
+            slides1.draggable = false;
+        });
+        navigator.forEach((navigator1) => {
+            navigator1.onclick = () => {
+                if (navigator1.id == 1 && counter + 1 < slides.length) {
+                    counter++;
+                } else if (navigator1.id == 0 && counter > 0) {
+                    counter--;
+                }
+                slider.style.transition = "transform 0.4s ease-in-out";
+                navigatorId = navigator1.id;
+                navigator1.disabled = true;
+                increament();
+            };
+        });
+        slider.addEventListener("transitionend", transitionEnd);
+        function transitionEnd() {
+            if (slides[counter].id == "lastClone") {
+                slider.style.transition = "none";
+                counter = slides.length - 2;
+                increament();
+            } else if (slides[counter].id == "firstClone") {
+                slider.style.transition = "none";
+                counter = slides.length - counter;
+                increament();
+            }
+            dots.forEach((dot1) => {
+                dot1.classList.remove("clicked");
+            });
+            dots[counter - 1].classList.add("clicked");
+            navigator[navigatorId].disabled = false;
+        }
+
+        function increament() {
+            slider.style.transform = `translateX(${(containerWidth - slideWidth) * 0.5 - slideWidth * counter
+                }px)`;
+            clearInterval(interval);
+            interval = setInterval(() => {
+                navigator[1].click();
+            }, 2000);
+        }
+        increament();
+        window.addEventListener("resize", () => {
+            increament();
+        });
+        for (i = 1; i <= slides.length - 2; i++) {
+            let dot = document.createElement("span");
+            dot.id = "dot" + i;
+            dot.setAttribute("onclick", `dotClick(${i})`);
+            dotDiv.appendChild(dot);
+        }
+        dots = dotDiv.querySelectorAll("span");
+        dots[0].classList.add("clicked");
+        function dotClick(c) {
+            counter = c;
+            slider.style.transition = "transform 0.4s ease-in-out";
+            increament(counter);
+            dots.forEach((dot1) => {
+                dot1.classList.remove("clicked");
+            });
+            dots[c - 1].classList.add("clicked");
+        }
+        window.oncontextmenu = (e) => {
+            e.preventDefault();
+        };
+        window.onkeyup = (e) => {
+            if (e.keyCode == 37) navigator[0].click();
+            else if (e.keyCode == 39) navigator[1].click();
+        };
+
+    </script>
+</body>
+
+</html>

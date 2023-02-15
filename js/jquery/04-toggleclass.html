@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       #box{
+            width: 600px;
+            border: solid 1px ;
+        }
+        .bg{
+            background-color: coral;
+        }
+        .bgimg{
+            background-color: rgb(67, 209, 105);
+        }
+    </style>
+</head>
+<body>
+    <div id="box" class="bg">
+        <h1>jquery addclass css</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur facilis rem, qui quia autem nisi nobis inventore officia incidunt officiis dignissimos, numquam doloremque dolore eum ratione? Veniam quibusdam tempora optio.</p>
+    </div>
+
+    <button id="addclass">addclass</button>
+    <button id="removeclass">removeclass</button>
+    <button id="toggleclass">toggle</button>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+        $("#addclass").click(function(){
+            $("#box").addClass('bgimg')
+        });
+        $("#removeclass").click(function(){
+            $("#box").removeClass('bgimg')
+        });
+        $("#toggleclass").click(function(){
+            $("#box").toggleClass('bgimg')
+        });
+        });
+    </script>
+</body>
+</html>

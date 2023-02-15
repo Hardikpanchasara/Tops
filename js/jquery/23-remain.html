@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="hardik" id="hardik">
+    <p id="self" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quasi in quas ea totam, incidunt dolorum
+        accusamus laboriosam repellat? Provident quod eum modi facilis iusto facere voluptatem pariatur similique
+        officia?</p>
+    <button id="clk">click</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+
+            //events
+            //mouse     = click, doubleclick, mouseenter, mouseleave, 
+            // keyboard = keypress , keydown, keyup
+            // form     = submit, change, focus , blur
+            // window   = load ,resize, scroll, unload.
+
+ /* ************************************************************************************************ */
+ 
+            // $("#clk").click(function(){
+            //     $("#self").empty()
+            // })
+            // $("#clk").click(function(){
+            //     $("#self").text("hey i am hardik!")
+            // })
+            // $("#clk").click(function(){
+            //     $("#hardik").val("hey i am hardik!")
+            // })
+            // $("#clk").click(function(){
+            //     $("body").html("<h1>hey i am hardik!</h1>" )
+            // })
+            $("#clk").click(function(){
+                $("input").remove()
+            })
+        })
+    </script>
+
+
+</body>
+
+</html>

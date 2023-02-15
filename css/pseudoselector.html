@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* this is the pseudo element. */
+        p::first-letter{
+            font-size: 25px;
+            background-color: red;
+        }
+        p::first-line{
+            font-size: 25px;
+            background-color: red;
+        }
+        h1::after{
+            content: '~';
+        }
+        h1::before{
+            content: '~';
+        }
+        h1::selection{
+            background-color: #483822;
+        }
+
+        /* this is the psedo class. */
+        a:hover{
+            border: 5x solid coral;
+        }
+        a:visited{
+            color: aqua;
+        }
+
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nulla earum atque. Dignissimos facilis laborum sit quaerat blanditiis! Consequuntur est dolore tempore quasi fugit doloremque unde, nesciunt, maxime, porro quis asperiores saepe! Iure, numquam.</p>
+    <h1>hardik</h1>
+    <h1>hardik</h1>
+    <h1>hardik</h1>
+
+    <a href="#">home</a>
+    <a href="#">home</a>
+    <a href="#">home</a>
+    <a href="#">home</a>
+    <a href="#">home</a>
+</body>
+</html>

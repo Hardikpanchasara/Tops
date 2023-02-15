@@ -1,0 +1,26 @@
+*{
+    margin: 0;padding: 0;
+}
+body{
+    background-color: #999 ;
+}
+.container{
+    margin: 20px 40px;
+}
+img{
+    width: 147px;
+    height: 115px;
+}
+.box{
+    width: 20vw;
+    display: inline-block;
+    background-color: #fff;
+    margin: 0px 10px;
+    padding: 0px 10px;
+}
+.c-1{
+    display: inline-block;
+}
+a{
+    text-decoration: none;
+}

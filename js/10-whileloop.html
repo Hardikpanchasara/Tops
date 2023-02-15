@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="one"></p>
+
+    <script>
+        let n = prompt("enter a number")
+        n = Number.parseInt(n)
+        let i = 5
+        let a = document.getElementById("one")
+        // while (i < n) {
+        //     a.innerHTML += `${i} <br>` ;
+        //     // console.log(i)
+        //     i++ ;
+        // }
+
+        do {
+            a.innerHTML += `${i} <br>`
+            i++ ;
+        } while (i<n);
+
+    </script>
+</body>
+</html>

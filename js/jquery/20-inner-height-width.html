@@ -1,0 +1,60 @@
+!<!-- Get the current computed inner height (including padding but not border) for the first element in the set of matched elements or set the inner height of every matched element. 
+This method returns the height of the element, including top and bottom padding, in pixels. If called on an empty set of elements, returns undefined (null before jQuery 3.0).
+-->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>innerHeight demo</title>
+    <style>
+        div {
+            width: 60px;
+            padding: 10px;
+            height: 70px;
+            float: left;
+            margin: 5px;
+            background: red;
+            cursor: pointer;
+        }
+
+        .mod {
+            background: blue;
+            cursor: default;
+        }
+    </style>
+    
+</head>
+
+<body>
+
+    <div>d</div>
+    <div>d</div>
+    <div>d</div>
+    <div>d</div>
+    <div>d</div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            var defheight = 150;
+            var defwidth = 150;
+            // $("div").on("click",function(){           // on work more than one time
+            //     $(this).innerHeight(defheight).addClass("mod");
+            //     defheight -= 8;
+            // })
+            $("div").one("click",function(){         // one work only for one time
+                $(this).innerHeight(defheight).addClass("mod");
+                defheight -= 8;
+            })
+            $("div").one("click",function(){        
+                $(this).innerWidth(defwidth).addClass("mod");
+                defwidth -= 8;
+            })
+        })
+    </script>
+
+</body>
+
+</html>

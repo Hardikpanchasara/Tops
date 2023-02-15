@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+         
+        // var   = var variable accept rediclaration and reassessment          , this is not block scope.
+        // let   = let variable accept only reassesment                        , this is block scope
+        // const = const variable don't accept rediclaration and reassessment  , this is block scope
+
+        var samosa = 2
+        console.log(samosa);
+        {
+            var samosa = 1
+            console.log(samosa);
+        }
+        console.log(samosa);
+        
+        let kachori = 3
+        kachori = 5 
+        {
+            let kachori = 4
+            console.log(kachori);
+        }
+        console.log(kachori);
+
+        const bhajiya = 2
+        //bhajiya = 6  //reassessment is not valid in const
+        console.log(bhajiya);
+        {
+            const bhajiya = 3
+            console.log(bhajiya);
+        }
+        console.log(bhajiya);
+
+
+        
+    </script>
+</body>
+</html>

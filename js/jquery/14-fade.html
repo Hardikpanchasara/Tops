@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            /* display: none; */
+        }
+
+        #box1 {
+            background-color: red;
+        }
+
+        #box2 {
+            background-color: rgb(21, 0, 255);
+        }
+
+        #box3 {
+            background-color: rgb(255, 255, 0);
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <button id="fadein">fadeall-in-one</button>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            // $("#fadein").click(function(){
+            //     $("#box1").fadeIn()
+            //     $("#box2").fadeIn(5000)
+            //     $("#box3").fadeIn(10000)
+            // })
+            // $("#fadein").click(function(){
+            //     $("#box1").fadeOut()
+            //     $("#box2").fadeOut(5000)
+            //     $("#box3").fadeOut(10000)
+            // })
+            // $("#fadein").click(function(){
+            //     $("#box1").fadeToggle()
+            //     $("#box2").fadeToggle(5000)
+            //     $("#box3").fadeToggle(10000)
+            // })
+            $("#fadein").click(function(){
+                $("#box1").fadeTo(1000,0.5)
+                $("#box2").fadeTo(5000,0.5)
+                $("#box3").fadeTo(10000,0.5)
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background</title>
+    <style>
+        
+        div{
+            height: 800px;
+            margin: 10px 0px;
+        }
+        .bc-color{
+            background-color: black;
+            border: 20px dashed lightcoral;
+        }
+        .bc-img{
+            /* background: url(./img/flying-bird.jpg); */
+            background-image: url(./img/flying-bird.jpg);
+            border: 20px dashed lightcoral;
+        }
+        .bc-attachment{
+            background-image: url(./img/flying-bird.jpg);
+            border: 20px dashed lightcoral;
+            background-attachment: fixed;
+        }
+        .bc-position{
+            background-image: url(./img/flying-bird.jpg);
+            border: 20px dashed lightcoral;
+            background-repeat: no-repeat;
+            background-position: 100px 400px ;
+            /* background-position: left; */
+            /* background-position: center; */
+            /* background-position: right; */
+        }
+        .bc-norepeat{
+            background-image: url(./img/flying-bird.jpg);
+            border: 20px dashed lightcoral;
+            background-repeat: no-repeat;
+            /* background-repeat: repeat-x; */
+            /* background-repeat: repeat-y; */
+        }
+        .bc-size{
+            border: 20px dashed lightcoral;
+            background-image: url(./img/flying-bird.jpg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            /* background-size: cover; */
+        }
+        .bc-clip{
+            border: 20px dashed lightcoral;
+            background-image: url(./img/flying-bird.jpg);
+            /* background-clip: border-box; */
+            background-clip: content-box;
+            /* background-clip: padding-box; */
+            padding: 40px;
+        }
+        .flag{
+            /* opacity: 30%; */
+            background: linear-gradient(180deg, orange, white, green), url(./img/flying-bird.jpg);
+            /* background-image: url(./img/flying-bird.jpg); */
+            background-blend-mode: screen;
+            background-size: cover;
+        }
+        /* .bird{
+            background-image: url(./img/flying-bird.jpg);
+            background-size: cover;
+        } */
+        
+
+    </style>
+</head>
+<body>
+    <div class="bg">
+        <ul>
+            <li>background-color</li>
+            <li>background-img</li>
+            <li> background-attachment</li>
+            <li>background-clip</li>
+            <li>background-position</li>
+            <li>background-repeat</li>
+            <li>background-size</li>
+            <li>background</li>
+            <li>background-flag(linear-gradient)</li>
+        </ul>
+    </div>
+
+    <div class="bc-color"></div>
+    <div class="bc-img"></div>
+    <div class="bc-attachment"></div>
+    <div class="bc-position"></div>
+    <div class="bc-norepeat"></div>
+    <div class="bc-size"></div>
+    <div class="bc-clip">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, quae.</div>
+    <div class="bird">
+        <div class="flag"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>enter vegies name</h1>
+    <p id="pre"></p>
+    <script>
+        //for loop
+        const vegies = ['potato', 'tomato', 'bengan', 'lediesfinger']
+        let text = ''
+        for (let index = 0; index < vegies.length; index++) {
+            text += vegies[index] + "<br>"
+
+        }
+        document.getElementById("pre").innerHTML = text
+
+        //for in loop
+        // let obj = {
+        //     potato : 12 ,
+        //     tomato : 13 ,
+        //     bengan : 14 ,
+        //     lediesfinger : 15 ,
+        // }
+        // for (let a in obj) {
+        //     console.log(a + " : " + obj[a])
+        // }
+        
+        // const object = { a: 1, b: 2, c: 3 };
+        // for (const property in object) {
+        //     console.log(`${property}: ${object[property]}`);
+        // }
+
+        //for of loop
+        // for (const a of "kuchh") {
+        //     console.log(a);
+        // }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="window.alert('Page successfully loaded');" onresize="window.alert('you are resize the page');">
+    <h1>mouse event</h1>
+   
+    <input type="text" placeholder="onclick" onclick="clickevent()"> <br>
+    <input type="text" placeholder="onmouseover" onmouseover="clickevent()"><br>
+    <input type="text" placeholder="onmouseout" onmouseout="clickevent()"><br>
+    <input type="text" placeholder="onmousedown" onmousedown="clickevent()"><br>
+    <input type="text" placeholder="onmouseup" onmouseup="clickevent()"><br>
+    <input type="text" placeholder="onmousemove" onmousemove="clickevent()"><br>
+
+    <h1>keyboard event</h1>
+    <input type="text" placeholder="onkeydown" onkeydown="function2()" >
+    <input type="text" placeholder="onkeyup" onkeyup="function2()" >
+
+    <h1>form event</h1>
+
+    <input type="text " placeholder="focus" onfocus="function1()"><br>
+    <input type="text " placeholder="onblur" onblur="function1()"><br>
+    <input type="text " placeholder="onchange" onchange="function1()"><br>
+
+    <h1>window/document event</h1>
+    <li>onload</li>
+    <li>unload</li>
+    <li>resize</li>
+
+    <script>
+        function clickevent() 
+        {
+		document.write("This is onclick");
+	    }
+        function function2() {
+            document.getElementsByTagName('input')[6].style.backgroundColor = 'yellow'
+        }
+        function function1() {
+            document.getElementsByTagName('input')[8].style.backgroundColor = 'red'
+        }
+        
+    </script>
+</body>
+</html>

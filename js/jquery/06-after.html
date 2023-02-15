@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        #box{
+            background-color: burlywood;
+            width: 600px;
+        }
+    </style>
+   
+</head>
+<body>
+    <div id="box">
+       <h1>after add</h1>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed similique, explicabo itaque architecto placeat perspiciatis vel sapiente dolores ut perferendis, laudantium expedita culpa modi cupiditate, sit numquam ab. Iusto, repudiandae.</p>
+    </div>
+    <button id="after">after btn</button>
+
+     <!-- <script src="./jquery-3.6.3.min.js"></script> -->
+     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+        $("#after").click(function(){
+            $("#box").after("<h2>hardik</h2>")
+        });
+        });
+    </script>
+</body>
+</html>
