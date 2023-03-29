@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1>1 :Get time</h1>
+    <button id="time" onclick="">click</button>
+    <div id="timeshow"></div>
+
+    <h1>2 :multiply and devide</h1>
+    <form>
+        <input type="text" name="" id="firstN">
+        <input type="text" name="" id="secondN">
+        <input type="button" name="" onclick="multiply()" value="multiply">
+        <input type="button" name="" onclick="divide()" value="divide">
+    </form>
+    <p>the result is: <span id="result"></span></p>
+
+    <h1>3 : Get url </h1>
+    <button id="url" onclick="">click</button>
+    <div id="showurl"></div>
+
+    <h1>4 : 5,6,7 length triangle area</h1>
+    <div id="four"></div>
+
+    <h1>5 : <span id="five"></span> days left to next diwali</h1>
+
+
+    <script>
+        let clock = new Date()
+
+        let day = clock.toLocaleDateString()
+        let time = clock.toLocaleTimeString()
+
+        function multiply() {
+            num1 = document.getElementById("firstN").value;
+            num2 = document.getElementById("secondN").value;
+            document.getElementById("result").innerHTML = num1 * num2;
+        }
+
+        function divide() {
+            num1 = document.getElementById("firstN").value;
+            num2 = document.getElementById("secondN").value;
+            document.getElementById("result").innerHTML = num1 / num2;
+        }
+
+        var side1 = 5;
+        var side2 = 6;
+        var side3 = 7;
+        var s = (side1 + side2 + side3) / 2;
+        var area = Math.sqrt(s * ((s - side1) * (s - side2) * (s - side3)));
+
+        $(document).ready(function () {
+
+            $("#time").click(function () {
+                $("#timeshow").text(day + " " + time)
+            })
+
+            $("#url").click(function () {
+                $("#showurl").text(`The full URL of this page is: ${window.location.href};`)
+            });
+
+            $("#four").text(area)
+            
+            $("#five").text(daysleft)
+
+        })
+
+        
+        
+        let today = new Date();
+        let diwali = new Date(today.getFullYear(),11,12);
+        
+        if(today.getMonth() == 11 && today.getDate() > 12) {
+            diwali.setFullYear(diwali.getFullYear() + 1);
+        }
+        let one_day = 1000 * 60 * 60 * 24;
+        let daysleft = Math.ceil((diwali.getTime() - today.getTime()) / (one_day) ) ;
+
+
+
+    </script>
+
+</body>
+
+</html>
