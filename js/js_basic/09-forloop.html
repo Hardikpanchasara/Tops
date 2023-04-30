@@ -17,17 +17,16 @@
         let text = ''
         for (let index = 0; index < vegies.length; index++) {
             text += vegies[index] + "<br>"
-
         }
         document.getElementById("pre").innerHTML = text
 
         //for in loop
-        // let obj = {
-        //     potato : 12 ,
-        //     tomato : 13 ,
-        //     bengan : 14 ,
-        //     lediesfinger : 15 ,
-        // }
+        let obj = {
+            potato : 12 ,
+            tomato : 13 ,
+            bengan : 14 ,
+            lediesfinger : 15 ,
+        }
         // for (let a in obj) {
         //     console.log(a + " : " + obj[a])
         // }
@@ -37,10 +36,17 @@
         //     console.log(`${property}: ${object[property]}`);
         // }
 
-        //for of loop
-        // for (const a of "kuchh") {
-        //     console.log(a);
-        // }
+        // for of loop
+        for (const a of "kuchh") {
+            console.log(a);
+        }
+        for (const a of vegies) {
+            console.log(a);
+        }
+        for (const a of obj) {
+            console.log(a);
+        }
+
     </script>
 </body>
 

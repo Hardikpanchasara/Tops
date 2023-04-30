@@ -6,22 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body style="text-align: center;">
     
     <script>
-
-        
-        let a = prompt("enter your age")
-        a = Number.parseInt(a)
-
-        if (a<1){
-            alert("this age is not valid")
-        }
-        else if (a>=1 && a<18){
-            alert("you cannot drive")
-        }
-        else{
-            alert("you can drive")
+        for (let index = 0; index < 10; index++) {
+            for (let h = 0; h <= index; h++) {
+                document.writeln(`<span style="text-align: center; ">*</span>`)                
+            }
+            document.writeln("<br>")
         }
     </script>
 </body>

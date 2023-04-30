@@ -25,6 +25,14 @@
             i++ ;
         } while (i<n);
 
+        var a_result_object = {"Maths":90,"Eng":92,"Guj":95,"Comp":99};
+
+        // a_result_object.map(([value,key],i)=>{
+        Object.entries(a_result_object).map((value,key)=>{
+            console.log("key is ",key);
+            console.log("Value is ",value);
+        })
+
     </script>
 </body>
 </html>
